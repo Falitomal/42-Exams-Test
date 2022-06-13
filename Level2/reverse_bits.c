@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:35:53 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/03 17:42:03 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/06/13 19:04:40 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,40 @@ _____________
  0110  0100
  */
 
+#include "unistd.h"
+#include "stdio.h"
+
 unsigned char	reverse_bits(unsigned char octet)
 {
 	int i;
-	int res;
-	
-	i = 0;
-	res = 0;
-	while( i < 8)
-	{
-	res = res + octet % 2 * (2 poten(7-i));
-	
-	}
+	unsigned char res;
 
+	i = 8;
+	res = 0;
+	while( i > 0)
+	{
+		res = res * 2 + (octet % 2);
+		octet = octet / 2;
+		i--;
+	}
+	return(res);
+}
+
+/*
+** Test program : . (equal to 046 in ASCII table, 00101110 in binary)
+** becomes t (116 in ASCII table, 01110100 in binary).
+** byte 00101110 ('.') is indeed the reverse of byte 01110100 ('t').
+*/
+
+int	main(void)
+{
+	unsigned char c;
+
+	c = '.';
+	write(1, &c, 1);
+	write(1, "\n", 1);
+	c = reverse_bits(c);
+	write(1, &c, 1);
+	write(1, "\n", 1);
+	return (0);
 }
