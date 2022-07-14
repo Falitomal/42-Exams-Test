@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 19:15:21 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/13 19:20:26 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:02:15 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ This function returns 1 if the given number is a power of 2, otherwise it return
 Your function must be declared as follows:
 
 int	    is_power_of_2(unsigned int n); */
+
 int	    is_power_of_2(unsigned int n)
 {
 	unsigned long i;
