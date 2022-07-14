@@ -25,9 +25,9 @@ void	ft_swap(int *a, int *b);
 
 void	ft_swap(int *a, int *b)
 {
-	int	*temp;
+	int swap;
+	 swap = *a;
+	 *a = *b;
+	 *b = swap;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
 }
