@@ -1,64 +1,66 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 19:13:04 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/08 19:35:19 by jledesma         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stdlib.h>
 
-/* Assignment name  : ft_itoa
-Expected files   : ft_itoa.c
-Allowed functions: malloc
---------------------------------------------------------------------------------
-
-Write a function that takes an int and converts it to a null-terminated string.
-The function returns the result in a char array that you must allocate.
-
-Your function must be declared as follows: */
-
-char	*ft_itoa(int nbr); 
-*/
-
-static int ft_negative(int n)
+int		absolute_value(int nbr)
 {
-	if(n < 0)
-		n = -n;
-	return (n);
-}
-static size_t	ft_number_len(int n)
-{
-	size_t i;
-	
-	i = 0;
-	if (n <= 0)
-		i++;
-	while (n)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);	
-}
-
-char *ft_itoa(int nbr)
-{
-	char *res;
-	size_t pos;
-	size_t len;
-	
-	len = ft_number_len(n);
-	res = (char *)malloc(sizeof(char) * (len + 1));
-	if(res == NULL)
-		return (NULL);
-	if (nbr == -2147483648)
-		return ("-2147483648\0");
 	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
+}
+
+int		get_len(int nbr)
+{
+	int len = 0;
+	if (nbr <= 0)
+		++len;
+	while (nbr != 0)
 	{
-	nbr = -nbr;
+		++len;
+		nbr = nbr / 10;
 	}
-	
+	return (len);
+}
+
+char	*ft_itoa(int nbr)
+{
+	char *result;
+	int len;
+
+	len = get_len(nbr);
+	result = malloc(sizeof(char) * (len + 1));
+	result[len] = '\0';
+
+	if (nbr < 0)
+		result[0] = '-';
+	else if (nbr == 0)
+		result[0] = '0';
+
+	while (nbr != 0)
+	{
+		--len;
+		result[len] = absolute_value(nbr % 10) + '0';
+		nbr = nbr / 10;
+	}
+	return (result);
+}
+
+
+#include <stdio.h>
+#include <limits.h>
+
+int		main(void)
+{
+	int d = INT_MIN;
+	printf("%d =? %s\n", d, ft_itoa(d));
+
+	d = -13;
+	printf("%d =? %s\n", d, ft_itoa(d));
+
+	d = 0;
+	printf("%d =? %s\n", d, ft_itoa(d));
+
+	d = 5;
+	printf("%d =? %s\n", d, ft_itoa(d));
+
+	d = INT_MAX;
+	printf("%d =? %s\n", d, ft_itoa(d));
 }

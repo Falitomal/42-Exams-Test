@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 17:51:58 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/15 12:10:06 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/06/15 12:32:08 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char    **ft_split(char *str)
 
 i = 0;
 i2 = 0;
-tab = (char **)malloc(sizeof(**tab) * WD_NUM);
+tab = (char **)malloc(sizeof(**tab) * 1000);
 
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 	i++;
@@ -48,7 +48,7 @@ tab = (char **)malloc(sizeof(**tab) * WD_NUM);
 		if (str[i] > 32)
 		{
 			i3 = 0;
-			tab[i2] = (char*)malloc(sizeof(char) * WD_LEN);
+			tab[i2] = (char*)malloc(sizeof(char) * 1000);
 			while (str[i] > 32)
 			{
 				tab[i2][i3] = str[i];

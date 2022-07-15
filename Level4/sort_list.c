@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 10:42:46 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/08 19:10:39 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/06/14 17:47:29 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,21 @@ Functions passed as cmp will always return a value different from
 For example, the following function used as cmp will sort the list 
 in ascending order:
 
-int ascending(int a, int b)
+int	ascending(int a, int b)
 {
 	return (a <= b);
 }
  */
 
-t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
+t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 {
 	int swap;
 	t_list *tmp;
 
 	tmp = lst;
-	while(lst->next != 0)
+	while (lst->next != 0)
 	{
-		if((*cmp)(lst->data, lst->next->data))
+		if ((*cmp)(lst->data, lst->next->data))
 		{
 			swap = lst->data;
 			lst->data = lst->next->data;
@@ -63,5 +63,5 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 			lst = lst->next;
 	}
 	lst = tmp;
-	return(lst);
+	return (lst);
 }
