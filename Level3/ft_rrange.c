@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:10:22 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/07 13:48:34 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/06/15 20:25:46 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int		main()
 	int i = 0;
 	while(array[i] != start)
 	{
-		printf("%d", array[i]);
+		printf("%d, ", array[i]);
 		i++;
 	}
 }

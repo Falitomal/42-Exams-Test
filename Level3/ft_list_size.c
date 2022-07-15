@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:56:34 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/04 18:07:11 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/06/15 20:54:24 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ int	ft_list_size(t_list *begin_list)
 		swap = swap->next;
 		i++;
 	}
-return(i);
+	return (i);
 }

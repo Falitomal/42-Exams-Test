@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:26:49 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/07 13:08:49 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/06/15 20:24:07 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		*ft_range(int start, int end)
 }
 int		main()
 {
-	int start = -1;
+	int start = -10;
 	int end = 22;
 
 	int *array;
@@ -77,7 +77,7 @@ int		main()
 	int i = 0;
 	while(array[i] != end)
 	{
-		printf("%d", array[i]);
+		printf("%d , ", array[i]);
 		i++;
 	}
 }
