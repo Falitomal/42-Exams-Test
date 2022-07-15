@@ -34,8 +34,6 @@ void camel_to_snake(char *str)
 		{
 			write(1, "_",1);
 			str[i]+=32;
-		//	write(1, &str[i], 1);
-		//	i++;
 		}
 			write(1, &str[i], 1);
 		i++;

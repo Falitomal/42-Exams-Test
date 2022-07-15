@@ -33,6 +33,7 @@ size_t ft_strcspn(const char *s, const char *reject)
 	}
 	return (i);
 }
+/*
 int main()
 {
 	printf("strcspn %lu\n", strcspn("holas123456", "5"));
@@ -41,3 +42,4 @@ int main()
 	printf("ft_strcspn %zu\n", ft_strcspn("hola$$34567891042baguette", "tte"));
 	return (0);
 }
+*/
