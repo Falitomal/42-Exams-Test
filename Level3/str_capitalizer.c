@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 				if (argv[c][i] >= 'A' && argv[c][i] <= 'Z')
 					argv[c][i] = argv[c][i] + 32;
 				if ((argv[c][i] >= 'a' && argv[c][i] <= 'z') &&
-               (argv[c][i - 1] == ' ' || argv[c][i - 1] == '\t'))
+	               (argv[c][i - 1] == ' ' || argv[c][i - 1] == '\t'))
 					argv[c][i] = argv[c][i] - 32;
 				if (argv[c][0] >= 'a' && argv[c][0] <= 'z')
 					argv[c][i] = argv[c][i] - 32;
