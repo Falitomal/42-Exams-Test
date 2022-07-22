@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:26:49 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/15 20:24:07 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:04:01 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,42 +34,36 @@ Examples:
 #include <unistd.h>
 #include <stdlib.h>
 
-int ft_abs(int i)
+int	*ft_range(int start, int end)
 {
-	if(i < 0)
+	int	size;
+	int	*ret;
+	int	*ptr;
+
+	size = end - start;
+	if (size)
 	{
-		return (-i);
+		ptr = (int *)malloc(sizeof(int) * size);
+		if (ptr)
+		{
+			ret = ptr;
+			while (start <= end)
+			{
+				*ptr = start;
+				ptr++;
+				start++;
+			}
+			return (ret);
+		}
 	}
-	return (i);
+	return (NULL);
 }
 
-int		*ft_range(int start, int end)
-{
-	int i;
-	int *tab;
 
-	i = 0;
-	tab = (int*)malloc(sizeof(int) * (ft_abs(start - end) + 1));
-	while (start < end)
-	{
-		tab[i] = start;
-		start++;
-		i++;
-	}
-	tab[i] = start;
-	while (end < start)
-	{
-		tab[i] = start;
-		start--;
-		i++;
-	}
-	tab[i] = start;
-	return (tab);
-}
 int		main()
 {
-	int start = -10;
-	int end = 22;
+	int start = -3;
+	int end = 2;
 
 	int *array;
 

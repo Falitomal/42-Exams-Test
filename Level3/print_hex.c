@@ -6,7 +6,7 @@
 /*   By: jledesma <jledesma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:28:13 by jledesma          #+#    #+#             */
-/*   Updated: 2022/06/01 10:49:36 by jledesma         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:35:42 by jledesma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		print_hex(ft_atoi(argv[1]));
+		print_hex(ft_aoi(argv[1]));
 		write(1, "\n", 1);
 	}
 }
