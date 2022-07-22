@@ -41,7 +41,7 @@ void sort_int_tab(int *tab, unsigned int size)
 
 }
 
-#include "stdio.h"
+/* #include "stdio.h"
  void	print_arr(int *tab, unsigned int size)
  {
  	unsigned int i = 0;
@@ -51,15 +51,15 @@ void sort_int_tab(int *tab, unsigned int size)
 		++i;
  	}
  	printf("\n");
- }
+ } */
 
- int		main(void)
+/*  int		main(void)
  {
  	int tab[] = { 8, -1, 9, -3, -2, 1, 0, 3, 8, 1, 9 };
  	unsigned int size = sizeof(tab) / sizeof(*tab);
  	print_arr(tab, size);
  	sort_int_tab(tab, size);
  	print_arr(tab, size);
- }
+ } */
 
 
